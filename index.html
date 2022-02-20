@@ -1,5 +1,33 @@
 <html>
-    <body>
-        <center><canvas id="canvas"></canvas></center>
+    <body bgcolor="#696969">
+        <div id="top">
+            <span id="start" class="button">START</span>
+            <span id="SettingButton" class="button">SETTING</span>
+        </div>
+        <div id="main">
+            <canvas id="canvas"></canvas>
+            <canvas id="canvas2"></canvas>
+            <div id="menu">
+                <div class="setting">
+                    NUMBER OF BLOCK
+                    <span>
+                        <span id="tag-number" style="margin-top: 0%; margin-bottom: 0%;" >40</span>
+                        <input id="numberBar" type="range" min="2" max="50" step="2" value="40" oninput="changeSize(this.value)" style="margin: 0px 0px;">
+                    </span>
+                </div>
+                <div class="setting">
+                    BULLET SPEED
+                    <span>
+                        <span id="tag-speed" style="margin-top: 0%; margin-bottom: 0%;" >50</span>
+                        <input id="speedBar" type="range" min="0" max="100" step="1" value="50" oninput="changeSpeed(this.value)" style="margin: 0px 0px;">
+                    </span>
+                </div>
+            </div>
+        </div>
     </body>
+
+    <link rel="stylesheet" type="text/css" href="./style.css">
+    <script src="./setting.js"></script>
+    <script src="./render.js"></script>
+    <script src="./main.js"></script>
 </html>

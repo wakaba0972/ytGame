@@ -29,7 +29,7 @@ function Rect2Cir(r, c){
     let ay = cy - ry - r.h / 2
     ay = ay > 0 ? ay : 0
     
-    return Math.sqrt(ax ** 2 + ay ** 2) < ball.r
+    return (Math.sqrt(ax ** 2 + ay ** 2) < c.r)
 }
 
 function Rect2Rect(r1, r2){

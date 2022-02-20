@@ -1,3 +1,5 @@
+importScripts('./geometry.js', './intersection.js')
+
 class quadtree{
     constructor(x, y, w, h){
         this.geo = new Rectangle(x, y, w, h)
@@ -17,7 +19,7 @@ class quadtree{
     insert(object){
         if(!isIntersect(this.geo, object.geo)) return false
         else if(this.length < 4){
-            object.pos = this
+            ++this.length
             this.data.push(object)
             return true
         }
@@ -28,15 +30,20 @@ class quadtree{
             }
         }
     }
-
+    
     query(object){
         if(!isIntersect(this.geo, object.geo)) return
-        for(let c of this.childs) this.query(object)
         for(let d of this.data){
             if(isIntersect(d.geo, object.geo)){
-                //doSomthing
+                if(d.team != object.team){
+                    d.team = object.team
+                    return d
+                }
             }
         }
+        for(let c of this.childs) {
+            let a = c.query(object)
+            if(a) return a
+        }
     }
-
 }

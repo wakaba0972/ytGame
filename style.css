@@ -1,0 +1,61 @@
+.button {
+    margin-right: 10px;
+    font-size: 30px;
+    font-family: fantasy;
+    transition: all .3s linear;
+}
+.button:hover{
+    background-color: #696969;
+    color: #fff;
+}
+
+.setting {
+    display: flex;
+    margin: 5px 5px;
+    font-size: 30px;
+    font-family: fantasy;
+    justify-content: space-between;
+}
+
+.BlurAnime {
+    animation-name: Blur;
+    animation-duration: 1s;
+    animation-iteration-count: 1;   
+    animation-fill-mode: forwards;
+}
+
+@keyframes Blur {
+    0% { filter: blur(0px); }
+    50% { filter: blur(2px); }
+    75% { filter: blur(3px); }
+    100% { filter: blur(4px); }
+}
+
+#top {
+    width: 100%;
+    height: 5%;
+    margin-bottom: 10px;
+}
+
+#main {
+    position: relative;
+}
+
+#canvas {
+    position: absolute;
+}
+
+#canvas2 {
+    position: absolute;
+}
+
+#menu {
+    width: 500px;
+    height: 400px;
+    display: none;
+    position: absolute;
+    background-color: #7a7171;
+    left: calc((100% - 500px) / 2);
+    top: 200px;
+}
+
